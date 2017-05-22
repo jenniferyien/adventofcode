@@ -18,4 +18,4 @@ function snow(floor) {
   console.log('floor', floor_number)
 }
 
-snow()
+snow("((())")
