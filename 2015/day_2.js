@@ -1,3 +1,5 @@
+// Part 1 && 2
+
 function surface_area(input) {
   total_wp = 0
   total_r = 0

@@ -1,3 +1,5 @@
+//Part 1 && 2
+
 function snow(floor) {
   floor_number = 0
   position = 0
