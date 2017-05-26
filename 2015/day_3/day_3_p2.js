@@ -1,38 +1,7 @@
-// Part 1
+const fs = require('fs')
 
-function deliver(input) {
-  var house = 0
-  var position_vertical = 0
-  var position_horizontal = 0
-  var coordinates = { 0: [0]}
-  var array = input.split('')
-  array.map((direction) => {
-    if(direction == '>') {
-      position_horizontal = position_horizontal + 1
-    } else if (direction == '<') {
-      position_horizontal = position_horizontal - 1
-    } else if (direction == '^') {
-      position_vertical = position_vertical + 1
-    } else if (direction == 'v') {
-      position_vertical = position_vertical - 1
-    }
-    if(coordinates[position_horizontal]) {
-      if(coordinates[position_horizontal].indexOf(position_vertical) == -1) {
-       coordinates[position_horizontal].push(position_vertical)
-      }
-    } else {
-      coordinates[position_horizontal] = [position_vertical]
-    }
-  })
-  for (var num in coordinates) {
-    house = house + coordinates[num].length
-  }
-  console.log(house)
-}
+const dataInput = fs.readFileSync('./sample_input.txt', 'utf8');
 
-deliver("v>v<vvv<^^")
-
-//Part 2
 function speedDeliver(input) {
   var house = 0
   var santaCoordinates = { 0: [0]}
@@ -83,7 +52,7 @@ function speedDeliver(input) {
     house = house + roboSantaCoordinates[num].length
   }
   total_houses = house - matching.length
-  console.log(total_houses)
+  console.log(`There are at least ${total_houses} houses that receive presents.`)
 }
 
 function getMatch(a, b) {
@@ -96,4 +65,4 @@ function getMatch(a, b) {
   return matches;
 }
 
-speedDeliver("v>v<vvv<<vv^v<v")
+speedDeliver(dataInput)
