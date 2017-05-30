@@ -4,7 +4,7 @@ const dataInput = fs.readFileSync('./sample_input.txt', 'utf8');
 
 function surface_area(input) {
   let total_r = 0
-  let array = input.split(' ')
+  let array = input.replace(/(\r\n|\n|\r)/gm," ").trim().split(' ')
   array.map((dimension) => {
     di = dimension.split('x')
     l = parseInt(di[0])
