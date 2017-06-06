@@ -2,7 +2,7 @@ const fs = require('fs')
 
 const dataInput = fs.readFileSync('./sample_input.txt', 'utf8');
 
-function lightConfig(instructions) {
+function lightBrightness(instructions) {
   let array = instructions.replace(/(\r\n|\n|\r)/gm,":").trim().split(':')
   let coords = {}
   array.map((str) => {
@@ -14,7 +14,7 @@ function lightConfig(instructions) {
       let xEnd = parseInt(endCoords[0])
       let yStart = parseInt(startCoords[1])
       let yEnd = parseInt(endCoords[1])
-      coords = setCoords(coords, xStart, xEnd, yStart, yEnd, instruct[1])
+      coords = setLightLevel(coords, xStart, xEnd, yStart, yEnd, instruct[1])
     } else if (instruct[0] == 'toggle') {
       let startTog = instruct[1].split(',')
       let endTog = instruct[instruct.length - 1].split(',')
@@ -22,13 +22,13 @@ function lightConfig(instructions) {
       let xEnd = parseInt(endTog[0])
       let yStart = parseInt(startTog[1])
       let yEnd = parseInt(endTog[1])
-      coords = setCoords(coords, xStart, xEnd, yStart, yEnd, instruct[0])
+      coords = setLightLevel(coords, xStart, xEnd, yStart, yEnd, instruct[0])
     }
   })
   console.log(`All the lights has a total brightness of ${Object.values(coords).reduce((a,b) => a + b, 0)}.`)
 }
 
-function setCoords(obj, xS, xE, yS, yE, state) {
+function setLightLevel(obj, xS, xE, yS, yE, state) {
   let begin = parseInt(xS)
   let stop = parseInt(xE) + 1
   do {
@@ -58,4 +58,4 @@ function setCoords(obj, xS, xE, yS, yE, state) {
   return obj
 }
 
-lightConfig(dataInput)
+lightBrightness(dataInput)
