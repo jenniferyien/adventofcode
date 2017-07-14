@@ -4,13 +4,20 @@ const dataInput = fs.readFileSync('./sample_input.txt', 'utf8')
 
 let wire = {}
 
-function wires(circuit) {
+function setWires() {
   let array = dataInput.replace(/(\r\n|\n|\r)/gm,"\n").trim().split('\n')
   array.map((str) => {
     string = str.split('->')
     let wireInput = string[string.length - 1].trim()
     wire[wireInput] = string[0].trim()
   })
+}
+
+function wires(circuit) {
+  setWires()
+  let wireA = wireCheck(circuit)
+  setWires()
+  wire['b'] = wireA
   return wireCheck(circuit)
 }
 

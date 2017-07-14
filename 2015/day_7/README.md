@@ -46,3 +46,13 @@ To Run Code Day 7 Part 1:
 ```
 node day_7_p1.js
 ```
+
+#### Part 2 Problem:
+> Now, take the signal you got on wire a, override wire b to that signal, and reset the other wires (including wire a).
+
+**What new signal is ultimately provided to wire a?**
+
+To Run Code Day 7 Part 2:
+```
+node day_7_p2.js
+```
