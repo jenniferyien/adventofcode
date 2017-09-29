@@ -4,7 +4,7 @@
 
 > Every year, Santa manages to deliver all of his presents in a single night.
 
-> This year, however, he has some new locations to visit; his elves have provided him the distances between every pair of locations. He can start and end at any two (different) locations he wants, but he must visit each location exactly once. What is the shortest distance he can travel to achieve this?
+> This year, however, he has some new locations to visit; his elves have provided him the distances between every pair of locations. He can start and end at any two (different) locations he wants, but he must visit each location exactly once. What is the `shortest distance` he can travel to achieve this?
 
 #### For example, given the following distances:
 
@@ -31,4 +31,18 @@ Belfast -> London -> Dublin = 982
 To Run Code Day 9 Part 1:
 ```
 node day_9_p1.js
+```
+
+#### Part 2 Problem:
+> The next year, just to show off, Santa decides to take the route with the `longest distance` instead.
+
+> He can still start and end at any two (different) locations he wants, and he still must visit each location exactly once.
+
+> For example, given the distances above, the longest route would be `982` via (for example) `Dublin -> London -> Belfast`.
+
+**What is the distance of the longest route?**
+
+To Run Code Day 9 Part 2:
+```
+node day_9_p2.js
 ```

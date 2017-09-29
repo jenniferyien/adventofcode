@@ -35,7 +35,7 @@ function distance() {
     return permutations
   }
   let possibleRoutes = permut(locations)
-  let shortestDistance
+  let longestDistance
   possibleRoutes.map((route) => {
     let distance = 0
     for (let i= 0; i < route.length; i++) {
@@ -45,11 +45,11 @@ function distance() {
         }
       })
     }
-    if (!shortestDistance || shortestDistance >= distance) {
-      shortestDistance = distance
+    if (!longestDistance || longestDistance <= distance) {
+      longestDistance = distance
     }
   })
-  console.log('The distance of the shortest route is', shortestDistance)
+  console.log('The distance of the longest route is', longestDistance)
 }
 
 distance()
