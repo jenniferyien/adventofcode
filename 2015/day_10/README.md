@@ -22,3 +22,16 @@ To Run Code Day 10 Part 1:
 ```
 node day_10_p1.js
 ```
+
+#### Part 2 Problem:
+
+> Neat, right? You might also enjoy hearing John Conway talking about this sequence (that's Conway of Conway's Game of Life fame).
+
+> Now, starting again with the digits in your puzzle input, apply this process `50` times.
+
+**What is the length of the new result?**
+
+To Run Code Day 10 Part 2:
+```
+node day_10_p2.js
+```
