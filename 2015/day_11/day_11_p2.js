@@ -40,8 +40,13 @@ function pwIncrementor(pw) {
 }
 
 let password = 'vzbxkghb'
+let count = 0
 while(!passSecurity(password)) {
   password = pwIncrementor(password)
+  if (passSecurity(password) && count !== 1) {
+    count += 1
+    password = pwIncrementor(password)
+  }
 }
 
 console.log(`The next password should be ${password}`)

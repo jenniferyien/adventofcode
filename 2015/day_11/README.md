@@ -28,3 +28,14 @@ To Run Code Day 11 Part 1:
 ```
 node day_11_p1.js
 ```
+
+#### Part 2 Problem:
+
+> Santa's password expired again.
+
+**What's the next one?**
+
+To Run Code Day 11 Part 2:
+```
+node day_11_p2.js
+```
