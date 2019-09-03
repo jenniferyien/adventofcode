@@ -21,3 +21,19 @@ To Run Code Day 12 Part 1:
 ```
 node day_12_p1.js
 ```
+
+#### Part 2 Problem:
+
+> Uh oh - the Accounting-Elves have realized that they double-counted everything `red`.
+
+> Ignore any object (and all of its children) which has any property with the value `"red"`. Do this only for objects (`{...}`), not arrays (`[...]`).
+
+> - `[1,2,3]` still has a sum of `6`.
+> - `[1,{"c":"red","b":2},3]` now has a sum of `4`, because the middle object is ignored.
+> - `{"d":"red","e":[1,2,3,4],"f":5}` now has a sum of `0`, because the entire structure is ignored.
+> - `[1,"red",5]` has a sum of `6`, because `"red"` in an array has no effect.
+
+To Run Code Day 11 Part 2:
+```
+node day_12_p2.js
+```
