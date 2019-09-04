@@ -46,3 +46,5 @@ To Run Code Day 9 Part 2:
 ```
 node day_9_p2.js
 ```
+
+##### [Problem Input](./sample_input.txt)

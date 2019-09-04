@@ -43,3 +43,6 @@ node day_8_p1.js
 To Run Code Day 8 Part 2:
 ```
 node day_8_p2.js
+```
+
+##### [Problem Input](./sample_input.txt)

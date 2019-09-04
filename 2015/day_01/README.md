@@ -37,3 +37,5 @@ To Run Code Day 1 Part 2:
 ```
 node day_1_p2.js
 ```
+
+##### [Problem Input](./sample_input.txt)

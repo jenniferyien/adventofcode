@@ -6,14 +6,14 @@ function arrangement() {
   let array = dataInput.replace(/(\r\n|\n|\r)/gm,"\n").trim().split('\n')
   let guestList = guests(array)
   let variationList = permutation(guestList)
-  let potentialHappiness = seatings(array)
+  let potentialHappiness = seatings(array, guestList)
   let attendeeHappiness = allHappiness(variationList, potentialHappiness)
-  console.log(`The total change in happiness for the optimal seating arrangement is ${attendeeHappiness.pop()}.`)
+  console.log(`The total change in happiness for the optimal seating arrangement that includes myself is ${attendeeHappiness.pop()}.`)
 }
 
 function guests(array) {
-  let people = []
-  array.forEach(function(sen){
+  let people = ['Me']
+  array.forEach(function(sen) {
     let name = sen.split(' ')[0]
     people.push(name)
   })
@@ -39,7 +39,7 @@ function permutation(names) {
   return per
 }
 
-function seatings(ss) {
+function seatings(ss, guests) {
   let seats = {}
   for(let i = 0; i < ss.length; i++) {
     let pairing = ss[i].match(/([A-Z][a-z]+)/g)
@@ -56,6 +56,13 @@ function seatings(ss) {
     } else if (loss) {
       seats[first][second] = parseInt(-count)
     }
+    seats[first]['Me'] = 0
+  }
+  for(let j = 0; j < guests.length; j++) {
+    if (!seats['Me']) {
+      seats['Me'] = {}
+    }
+    seats['Me'][guests[j]] = 0
   }
   return seats
 }

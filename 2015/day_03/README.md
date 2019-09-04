@@ -38,3 +38,5 @@ To Run Code Day 3 Part 2:
 ```
 node day_3_p2.js
 ```
+
+##### [Problem Input](./sample_input.txt)

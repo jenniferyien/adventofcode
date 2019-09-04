@@ -33,7 +33,9 @@ node day_12_p1.js
 > - `{"d":"red","e":[1,2,3,4],"f":5}` now has a sum of `0`, because the entire structure is ignored.
 > - `[1,"red",5]` has a sum of `6`, because `"red"` in an array has no effect.
 
-To Run Code Day 11 Part 2:
+To Run Code Day 12 Part 2:
 ```
 node day_12_p2.js
 ```
+
+##### [Problem Input](./sample_input.txt)
