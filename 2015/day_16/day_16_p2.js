@@ -18,17 +18,22 @@ const tickerTape = {
 function auntSue() {
   let array = dataInput.replace(/(\r\n|\n|\r)/gm,"\n").trim().split('\n')
   let aunts = auntList(array)
-  let selectedAunt = match(aunts)
-  console.log(`Aunt Sue ${selectedAunt} got the gift.`)
+  let selectedAunt = updatedMatch(aunts)
+  console.log(`Aunt Sue ${selectedAunt} is the one that actually got the gift.`)
 }
 
-function match(descriptions) {
+function updatedMatch(descriptions) {
   let auntNumber;
   for (let aunt in descriptions) {
     let descripters = descriptions[aunt]
     let totalMatch = 0
     for (let attribute in descripters) {
-      if (tickerTape[attribute] == descripters[attribute]) {
+      let updates = ['cats', 'trees', 'pomeranians', 'goldfish']
+      if ((attribute == 'cats' || attribute == 'trees') && tickerTape[attribute] < descripters[attribute]) {
+        totalMatch += 1
+      } else if ((attribute == 'pomeranians' || attribute == 'goldfish') && tickerTape[attribute] > descripters[attribute]) {
+        totalMatch += 1
+      } else if (updates.indexOf(attribute) < 0 && tickerTape[attribute] == descripters[attribute]) {
         totalMatch += 1
       }
     }
